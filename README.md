@@ -70,6 +70,20 @@ streamlit run cleaningCompanyChat.py
 
 - FAISS for vector store and similarity search.
 
+# Testing
+
+Request: “I want to book general cleaning.”
+
+Response: “Next available slot on 2025-01-01 00:00, and price is $100 for 3 hours.”
+
+Request: “I want to book post renovation cleaning.”
+
+Response: “We’re connecting you with a human agent.”
+
+Request: "I want to book deep cleaning."
+
+Response: "Sorry, we don't offer that service. We only offer post renovation cleaning."
+
 ## License
 
 [MIT](https://opensource.org/license/mit/)
