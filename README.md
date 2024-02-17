@@ -22,9 +22,11 @@ The bot is integrated into a user-friendly interface created with Streamlit, all
 
 ## Installation
 
-Try the streamlit [here](https://multiagentchatbot.streamlit.app/)!
+Try the streamlit [here](https://multiagentchatbot.streamlit.app/).
 
-Access the API endpoint [here](https://multiagent-api-e1c2b87287a3.herokuapp.com/)!
+Access the API endpoint [here](https://multiagent-api-e1c2b87287a3.herokuapp.com/).
+
+Access the API Documentations [here](https://multiagent-api-e1c2b87287a3.herokuapp.com/docs).
 
 If you want to try it out and modify it:
 
