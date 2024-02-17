@@ -19,7 +19,7 @@ app = FastAPI()
 
 @app.post("/enquire/")
 def user_proxy_agent(enquiry: Enquiry) -> dict:
-
+    """Function for the User Proxy Agent of the cleaning company. This function will return and call either the Scheduler or Guardrail agent."""
     input = enquiry.content
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
@@ -53,6 +53,7 @@ def user_proxy_agent(enquiry: Enquiry) -> dict:
     
 
 def guardrail_agent(service: str) -> dict:
+    """Function for the Guardrail Agent of the cleaning company. This function will return a response based on the service indicated."""
     if service == "post_renovation_cleaning":
         return {"response": "We're connecting you with a human agent."}
     else:
@@ -60,6 +61,7 @@ def guardrail_agent(service: str) -> dict:
 
 
 def scheduler_agent(service: str) -> dict:
+    """Function for the Scheduler Agent of the cleaning company. This function will perform similarity search with RAG and simulate an API call for the next availability slot."""
     db = load_faiss_index()
     context = retrieve_context(db, service)
     next_available_slot = available_slots()
@@ -71,6 +73,8 @@ def scheduler_agent(service: str) -> dict:
         Return in json of the following format: {{ "response": "Next available slot on ___, and price is ___." }}'''
     }]
 
+    print(input)
+    
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         response_format={"type": "json_object"},
