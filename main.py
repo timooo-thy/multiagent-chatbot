@@ -16,6 +16,9 @@ class Enquiry(BaseModel):
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"Welcome": "This is the main endpoint for the Cleaner.io chatbot."}
 
 @app.post("/enquire/")
 def user_proxy_agent(enquiry: Enquiry) -> dict:
@@ -74,7 +77,7 @@ def scheduler_agent(service: str) -> dict:
     }]
 
     print(input)
-    
+
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         response_format={"type": "json_object"},
