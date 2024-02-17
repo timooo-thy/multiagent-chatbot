@@ -45,7 +45,7 @@ def main():
 
     # Sidebar for Hugging Face credentials, chat history download and buffer memory adjustment
     with st.sidebar:
-        st.title('Rescale Lab AI Chatbot')
+        st.title('Cleaner.io Chatbot - :robot_face:')
 
         email = st.text_input(
             'Enter E-mail:', type='default', on_change=change_user)
@@ -137,7 +137,7 @@ def main():
     if st.session_state.messages[st.session_state.current_conversation][-1]["role"] != "AI":
         with st.chat_message("AI"):
             with st.spinner("Generating response..."):
-                response = requests.post("http://127.0.0.1:8000/enquire", json={"content": prompt})
+                response = requests.post("https://multiagent-api-e1c2b87287a3.herokuapp.com/enquire", json={"content": prompt})
                 if response.status_code != 200:
                     response = {"response": "Sorry, I am unable to process your request at the moment. Please try again later."}
                 else:
