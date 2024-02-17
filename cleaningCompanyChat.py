@@ -145,10 +145,10 @@ def main():
         message = {"role": "AI", "content": response['response']}
         st.session_state.messages[st.session_state.current_conversation].append(
             message)
-        st.rerun()
 
         save_conversations(st.session_state.messages, email
                            )
+        st.rerun()
 
 
 if __name__ == "__main__":
