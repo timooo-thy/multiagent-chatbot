@@ -1,13 +1,15 @@
 ## Overview
 
-multiagent chatbot leverages the capabilities of large language models and the LangChain library to showcase the use of multiple agents .
+This multiagent chatbot leverages the capabilities of large language models and the LangChain library to showcase the use of multiple agents.
 
 The bot is integrated into a user-friendly interface created with Streamlit, allowing users to interact with the AI in real time.
 
-It also includes three agents:
+## Types of Agents
 
 1. The User Proxy Agent acts as the mediator between the customer's inquiries and the specific functions of the Guardrail and Scheduler agents. It interprets user input and decides which agent should handle the request based on the content of the inquiry.
+
 2. The Guardrail Agent is implemented to specifically handle inquiries for "post renovation cleaning" or any service currently outside the company's offerings.
+
 3. The Scheduler Agent is responsible for handling specific inquiries related to scheduling a service and providing pricing information. It achieves this by retrieving data from external sources such as APIs and PDF documents via RAG.
 
 ## Features
@@ -21,6 +23,7 @@ It also includes three agents:
 ## Installation
 
 Try the streamlit [here](https://multiagentchatbot.streamlit.app/)!
+
 Access the API endpoint [here](https://multiagent-api-e1c2b87287a3.herokuapp.com/)!
 
 If you want to try it out and modify it:
