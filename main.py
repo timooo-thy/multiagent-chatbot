@@ -76,8 +76,6 @@ def scheduler_agent(service: str) -> dict:
         Return in json of the following format: {{ "response": "Next available slot on ___, and price is ___." }}'''
     }]
 
-    print(input)
-
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         response_format={"type": "json_object"},
@@ -109,7 +107,7 @@ def load_faiss_index():
     db = FAISS.load_local("faiss_index", embeddings)
     return db
 
-def retrieve_context(db, prompt_input) -> list:
+def retrieve_context(db: object, prompt_input: str) -> list:
     """Function for retrieving context from the knowledge base"""
     similar_response = db.similarity_search(prompt_input, k=1)
     content_arr = [doc.page_content for doc in similar_response]
